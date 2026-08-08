@@ -1,0 +1,63 @@
+{
+  "name": "cv-application-system",
+  "version": "1.0.0",
+  "description": "Secure CV Application System with Clean Code Architecture",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js",
+    "test": "jest --coverage",
+    "test:security": "node scripts/test-security.js",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "db:migrate": "node backend/scripts/migrate.js",
+    "db:seed": "node backend/scripts/seed.js",
+    "admin:create": "node scripts/generate-admin.js",
+    "oci:encode-key": "node scripts/encode-oci-key.js",
+    "lint": "eslint backend/**/*.js --fix",
+    "worker:email": "node backend/workers/emailWorker.js",
+    "worker:backup": "node backend/workers/backupWorker.js"
+  },
+  "keywords": [
+    "cv",
+    "application",
+    "security",
+    "clean-code"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "4.18.2",
+    "mysql2": "3.6.5",
+    "redis": "4.6.11",
+    "amqplib": "0.10.3",
+    "jsonwebtoken": "9.0.2",
+    "bcryptjs": "2.4.3",
+    "dotenv": "16.3.1",
+    "cors": "2.8.5",
+    "helmet": "7.1.0",
+    "express-rate-limit": "7.1.5",
+    "express-validator": "7.0.1",
+    "multer": "1.4.5-lts.1",
+    "nodemailer": "6.9.7",
+    "axios": "1.6.2",
+    "file-type": "16.5.4",
+    "pdf-parse": "1.1.1",
+    "sanitize-html": "2.11.0",
+    "speakeasy": "2.0.0",
+    "winston": "3.11.0",
+    "morgan": "1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "3.0.2",
+    "jest": "29.7.0",
+    "supertest": "6.3.3",
+    "eslint": "8.55.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
